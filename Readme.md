@@ -30,3 +30,4 @@ Free / Open Source, all the hard work done by Adrian Colomitchi and Dave Eberly,
 For more details and theory visit:
 http://caffeineowl.com/graphics/2d/vectorial/
 http://www.gamedev.net/topic/551455-length-of-a-generalized-quadratic-bezier-curve-in-3d/
+http://www.geometrictools.com/index.html
