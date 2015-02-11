@@ -105,6 +105,7 @@ namespace FastBezier {
     class Bezier3 {
 
         public static double InterpolationPrecision = 0.001;
+        public static double LineInterpolationPrecision = 0.05;
 
         #region Optimization constants
 
@@ -182,7 +183,7 @@ namespace FastBezier {
         /// </summary>
         public double InterpolatedLength {
             get {
-                double dt = InterpolationPrecision / (D - A).Length, length = 0;
+                double dt = LineInterpolationPrecision / (D - A).Length, length = 0;
                 for (double t = dt; t < 1; t += dt) length += (P(t - dt) - P(t)).Length;
                 return length;
             }
@@ -245,9 +246,7 @@ namespace FastBezier {
             double l0 = 0, l1 = 0, l2 = 0;
             int s0 = 0, s1 = 0, s2 = 0;
             TimeSpan t = new TimeSpan(0, 0, 3);
-            Bezier3.InterpolationPrecision = 0.05;
             s0 = Benchmark(() => { l0 = testCurve.InterpolatedLength; }, t, "line interpolation");
-            Bezier3.InterpolationPrecision = 0.001;
             s1 = Benchmark(() => { l1 = testCurve.Length; }, t, "adaptive quadratic interpolation");
             s2 = Benchmark(() => { l2 = testCurve.QLength; }, t, "midpoint quadratic interpolation");
             Console.WriteLine(String.Format(
