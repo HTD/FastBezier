@@ -109,10 +109,10 @@ namespace FastBezier {
 
         #region Optimization constants
 
-        protected static double Sqrt3 = Math.Sqrt(3);
-        protected static double Div18Sqrt3 = 18 / Sqrt3;
-        protected static double OneThird = 1 / 3;
-        protected static double Sqrt3Div36 = Sqrt3 / 36;
+        protected static double Sqrt3 = Math.Sqrt(3d);
+        protected static double Div18Sqrt3 = 18d / Sqrt3;
+        protected static double OneThird = 1d / 3d;
+        protected static double Sqrt3Div36 = Sqrt3 / 36d;
 
         #endregion
 
@@ -145,7 +145,7 @@ namespace FastBezier {
         /// <summary>
         /// Control point for mid-point quadratic approximation
         /// </summary>
-        private V3D Q { get { return (3 * C - D + 3 * B - A) / 4; } }
+        private V3D Q { get { return (3 * C - D + 3 * B - A) / 4d; } }
 
         /// <summary>
         /// Mid-point quadratic approximation
@@ -171,7 +171,7 @@ namespace FastBezier {
         /// <summary>
         /// The distance between 0 and 1 quadratic aproximations
         /// </summary>
-        private double D01 { get { return (D - 3 * C + 3 * B - A).Length / 2; } }
+        private double D01 { get { return (D - 3 * C + 3 * B - A).Length / 2d; } }
 
         /// <summary>
         /// Split point for adaptive quadratic approximation
