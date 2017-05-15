@@ -216,7 +216,6 @@ namespace FastBezier {
                     double q = 4.0 * a * c - b * b;
                     double twoCpB = 2.0 * c + b;
                     double sumCBA = c + b + a;
-                    double mult0 = 0.25 / c;
                     var l0 = (0.25 / c) * (twoCpB * Math.Sqrt(sumCBA) - b * Math.Sqrt(a));
                     if (q == 0.0) return l0;
                     var l1 = (q / (8.0 * Math.Pow(c, 1.5))) * (Math.Log(2.0 * Math.Sqrt(c * sumCBA) + twoCpB) - Math.Log(2.0 * Math.Sqrt(c * a) + b));
